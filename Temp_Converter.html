@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        padding: 40px;
+    }
+    h3{
+        text-align: center;
+    }
+.form{
+    background-color: #006780;
+    border: 2px solid red;
+    display: inline-block;
+    padding: 100px 20PX;
+    width: auto;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.inp{
+    height: 22px;
+    display: inline-block;
+    text-align: center;
+    
+
+}
+.lab{
+    /* padding: 30PX; */
+    margin: 500PX 10PX; 
+}
+
+
+</style>
+<body>
+    <h3>Temperature Converter</h3>
+    <div class="form">
+        <label is="cel" class="lab"> Celsius</label>
+        <input type="number" class="inp" value="0" id="cel">
+        <label is="cel" class="lab"> Fahrehent</label>
+        <input type="number" class="inp" value="32" id="fah">
+    
+    </div>
+    <SCRipt>
+        var cel = document.getElementById("cel")
+        var fah= document.getElementById("fah")
+
+        cel.addEventListener('input', function(){
+            let c = this.value;
+            let f = (c * 9/5) + 32;
+            if(!Number.isInteger(f)){
+                f = f.toFixed(4);
+            }
+            fah.value = f;
+        });
+
+        fah.addEventListener('input', function(){
+            let f = this.value;
+            let c = (f - 32) * 5/9;
+            if(!Number.isInteger(c)){
+                c = c.toFixed(4);
+            }
+            cel.value = c;
+        });
+
+    </SCRipt>
+</body>
+</html>
